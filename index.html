@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Hydroponics — Overview & Guides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F1E8;
+    --paper: #FDFAF3;
+    --ink: #1A1A16;
+    --ink-mid: #4A4A40;
+    --ink-light: #8A8A7A;
+    --green-deep: #274F30;
+    --green-mid: #3E7A4E;
+    --green-light: #BDD8C0;
+    --green-pale: #ECF4EC;
+    --teal-deep: #1A5450;
+    --teal-mid: #2A7A72;
+    --teal-light: #B8D8D4;
+    --teal-pale: #E8F3F2;
+    --amber-deep: #6E3410;
+    --amber-mid: #B86420;
+    --amber-light: #E8C090;
+    --amber-pale: #FDF2E4;
+    --border: rgba(30,30,20,0.10);
+    --shadow: 0 2px 16px rgba(30,40,20,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green-deep);
+    color: #fff;
+    padding: 72px 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(62,122,78,0.35) 0%, transparent 55%),
+      radial-gradient(circle at 15% 80%, rgba(26,84,80,0.3) 0%, transparent 50%);
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 700;
+    line-height: 1.0;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #8FCC94;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #8FCC94;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-plant-art {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* ── NAV BAR ── */
+  .topnav {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 52px;
+  }
+
+  .topnav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .topnav a:hover {
+    background: var(--green-pale);
+    color: var(--green-deep);
+  }
+
+  .topnav-divider {
+    width: 1px;
+    height: 18px;
+    background: var(--border);
+    margin: 0 8px;
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 940px; margin: 0 auto; padding: 0 48px; }
+
+  /* ── SECTION TITLES ── */
+  .section { padding: 64px 0 48px; border-top: 1px solid var(--border); }
+  .section:first-of-type { border-top: none; padding-top: 56px; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--green-mid);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .section-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  /* ── GUIDE CARDS ── */
+  .guide-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .guide-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.2s;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transition: opacity 0.2s;
+  }
+
+  .guide-card.teal::before { background: linear-gradient(90deg, var(--teal-deep), var(--teal-mid)); }
+  .guide-card.amber::before { background: linear-gradient(90deg, var(--amber-deep), var(--amber-mid)); }
+
+  .guide-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(30,40,20,0.13);
+    border-color: rgba(30,30,20,0.18);
+  }
+
+  .guide-card-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+
+  .guide-card.teal .guide-card-icon { background: var(--teal-pale); }
+  .guide-card.amber .guide-card-icon { background: var(--amber-pale); }
+
+  .guide-card-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .guide-card.teal .guide-card-eyebrow { color: var(--teal-deep); }
+  .guide-card.amber .guide-card-eyebrow { color: var(--amber-deep); }
+
+  .guide-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .guide-card p {
+    font-size: 13.5px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .guide-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .tag-teal { background: var(--teal-pale); color: var(--teal-deep); }
+  .tag-amber { background: var(--amber-pale); color: var(--amber-deep); }
+  .tag-green { background: var(--green-pale); color: var(--green-deep); }
+
+  .guide-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .guide-card.teal .guide-card-cta { color: var(--teal-deep); }
+  .guide-card.amber .guide-card-cta { color: var(--amber-deep); }
+
+  .arrow {
+    width: 18px; height: 18px;
+    transition: transform 0.18s;
+  }
+
+  .guide-card:hover .arrow { transform: translateX(4px); }
+
+  /* ── WHAT IS HYDROPONICS ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .prose p {
+    font-size: 14.5px;
+    color: var(--ink-mid);
+    margin-bottom: 14px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  /* ── INFO CARDS (why hydro) ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 36px;
+  }
+
+  .info-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .info-card-icon { font-size: 22px; margin-bottom: 10px; }
+  .info-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .info-card p { font-size: 13px; color: var(--ink-mid); line-height: 1.55; }
+
+  /* ── SYSTEM TYPES ── */
+  .system-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--paper);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .system-table thead th {
+    background: var(--green-deep);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 11px 16px;
+    text-align: left;
+  }
+
+  .system-table tbody tr:nth-child(even) { background: var(--cream); }
+  .system-table tbody tr:hover { background: var(--green-pale); }
+  .system-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .system-table td:first-child { font-weight: 600; color: var(--green-deep); white-space: nowrap; }
+  .system-table tr:last-child td { border-bottom: none; }
+
+  .difficulty {
+    display: inline-flex;
+    gap: 3px;
+    align-items: center;
+  }
+
+  .dot-filled { width: 8px; height: 8px; border-radius: 50%; background: var(--green-mid); }
+  .dot-empty { width: 8px; height: 8px; border-radius: 50%; background: var(--green-light); }
+
+  /* ── ESSENTIALS ── */
+  .essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .essential-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .essential-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .essential-card ul { list-style: none; }
+
+  .essential-card li {
+    font-size: 13.5px;
+    color: var(--ink-mid);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .essential-card li:last-child { border-bottom: none; }
+
+  .li-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* ── NUTRIENTS PANEL ── */
+  .nutrients-panel {
+    background: var(--ink);
+    border-radius: 14px;
+    padding: 32px 36px;
+    color: #fff;
+    margin-top: 36px;
+  }
+
+  .nutrients-panel h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+
+  .nutrients-panel .sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+
+  .nutrients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .nutrient-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .nutrient-symbol {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8FCC94;
+    margin-bottom: 4px;
+  }
+
+  .nutrient-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 4px;
+  }
+
+  .nutrient-role {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  /* ── PH TABLE ── */
+  .ph-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .ph-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .ph-card .plant { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .ph-card .range {
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-bottom: 4px;
+  }
+  .ph-card .ph-label { font-size: 10px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+
+  .glossary-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .glossary-item:nth-child(even) { border-right: none; }
+  .glossary-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .glossary-term {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-bottom: 4px;
+  }
+
+  .glossary-def {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.55);
+    padding: 40px 48px;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 80px;
+    line-height: 1.7;
+  }
+
+  .footer strong { color: rgba(255,255,255,0.8); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .hero { padding: 48px 24px; }
+    .topnav { padding: 0 24px; overflow-x: auto; }
+    .page { padding: 0 24px; }
+    .guide-cards, .two-col, .info-grid, .essentials-grid, .nutrients-grid { grid-template-columns: 1fr; }
+    .ph-grid { grid-template-columns: 1fr 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .glossary-item:nth-child(odd) { border-right: none; }
+    .glossary-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+    .glossary-item:last-child { border-bottom: none; }
+    .hero-plant-art { display: none; }
+  }
+
+  @media print {
+    .topnav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🌱 Home Hydroponics</div>
+    <h1>Growing plants<br>without <em>soil</em></h1>
+    <p class="hero-sub">A complete introduction to hydroponics — how it works, why it works, and everything you need to get started growing at home.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-val">3–5×</span>
+        <span class="hero-stat-label">Faster growth vs. soil</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">90%</span>
+        <span class="hero-stat-label">Less water used</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">365</span>
+        <span class="hero-stat-label">Days a year growing</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">2</span>
+        <span class="hero-stat-label">Detailed guides below</span>
+      </div>
+    </div>
+  </div>
+  <!-- Decorative SVG plant -->
+  <div class="hero-plant-art">
+    <svg width="280" height="380" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M140 360 C140 300 120 240 100 180 C80 120 60 80 80 40" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M100 180 C80 160 50 155 30 165" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <ellipse cx="22" cy="168" rx="22" ry="14" transform="rotate(-20 22 168)" fill="white"/>
+      <path d="M120 230 C100 210 70 200 45 210" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <ellipse cx="36" cy="213" rx="24" ry="13" transform="rotate(-15 36 213)" fill="white"/>
+      <path d="M115 150 C135 130 165 128 180 138" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <ellipse cx="189" cy="140" rx="22" ry="13" transform="rotate(15 189 140)" fill="white"/>
+      <path d="M105 270 C125 250 155 248 170 258" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <ellipse cx="179" cy="260" rx="20" ry="12" transform="rotate(10 179 260)" fill="white"/>
+      <circle cx="80" cy="40" r="18" fill="white" opacity="0.5"/>
+      <circle cx="100" cy="28" r="12" fill="white" opacity="0.5"/>
+      <circle cx="65" cy="32" r="10" fill="white" opacity="0.4"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ── NAV ── -->
+<nav class="topnav">
+  <a href="#what-is">What is hydroponics</a>
+  <a href="#why">Why hydroponics</a>
+  <a href="#systems">System types</a>
+  <a href="#essentials">Essentials</a>
+  <a href="#nutrients-section">Nutrients & pH</a>
+  <a href="#glossary">Glossary</a>
+  <div class="topnav-divider"></div>
+  <a href="#guides" style="color: var(--green-deep); font-weight:600;">📚 My Guides</a>
+</nav>
+
+<div class="page">
+
+  <!-- ── GUIDES ── -->
+  <div class="section" id="guides">
+    <div class="section-label">My reference guides</div>
+    <h2 class="section-title">Detailed grow guides</h2>
+    <p class="section-intro">Two complete grow guides covering every system, plant variety, lifecycle stage, nutrient schedule, and maintenance routine — built for the iDoo 12-pod and Suncore 20-pod desktop setups.</p>
+
+    <div class="guide-cards">
+      <a class="guide-card teal" href="hydroponic_guide.html">
+        <div>
+          <div class="guide-card-icon">🥬🍅</div>
+        </div>
+        <div>
+          <div class="guide-card-eyebrow">iDoo · Suncore</div>
+          <h3>Lettuce & Dwarf Tomato Guide</h3>
+          <p>Complete lifecycle guide for Black Seed Lettuce, Red Romaine, Yellow Pear, Rainbow Mix, and Green Zebra tomatoes. Covers germination, seedling thinning, pruning, nutrient schedules, pH management, and harvest.</p>
+        </div>
+        <div class="guide-card-tags">
+          <span class="tag tag-teal">Lettuce</span>
+          <span class="tag tag-teal">Dwarf tomatoes</span>
+          <span class="tag tag-green">GH Nutrients</span>
+          <span class="tag tag-green">FloraBloom</span>
+          <span class="tag tag-green">CALiMAGic</span>
+        </div>
+        <div class="guide-card-cta">
+          Open guide
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a class="guide-card amber" href="chinese_veg_grow_guide.html">
+        <div>
+          <div class="guide-card-icon">🥬🌿</div>
+        </div>
+        <div>
+          <div class="guide-card-eyebrow">iDoo · Suncore</div>
+          <h3>Chinese Vegetables Guide</h3>
+          <p>Grow guide for Bok Choy, Pea Shoots, Tong Hao, Red Amaranth, Water Spinach, and Perilla in your desktop systems. Includes variety-specific nutrient schedules, succession planting timelines, and iDoo/Suncore pod layout recommendations.</p>
+        </div>
+        <div class="guide-card-tags">
+          <span class="tag tag-amber">Bok Choy</span>
+          <span class="tag tag-amber">Pea Shoots</span>
+          <span class="tag tag-amber">Perilla</span>
+          <span class="tag tag-amber">Tong Hao</span>
+          <span class="tag tag-green">6 varieties</span>
+        </div>
+        <div class="guide-card-cta">
+          Open guide
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <div style="background:var(--green-pale);border:1px solid var(--green-light);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green-deep);margin-top:4px;">
+      💡 <strong>To use these guides offline:</strong> Keep all three HTML files in the same folder — <code style="font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,0,0,0.06);padding:1px 6px;border-radius:4px;">index.html</code>, <code style="font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,0,0,0.06);padding:1px 6px;border-radius:4px;">hydroponic_guide.html</code>, and <code style="font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,0,0,0.06);padding:1px 6px;border-radius:4px;">chinese_veg_grow_guide.html</code>. Then just open <code style="font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,0,0,0.06);padding:1px 6px;border-radius:4px;">index.html</code> in any browser — no internet needed.
+    </div>
+  </div>
+
+  <!-- ── WHAT IS HYDROPONICS ── -->
+  <div class="section" id="what-is">
+    <div class="section-label">The basics</div>
+    <h2 class="section-title">What is hydroponics?</h2>
+
+    <div class="two-col">
+      <div class="prose">
+        <p>Hydroponics is a method of growing plants using a <strong>water-based nutrient solution</strong> instead of soil. The word comes from the Greek <em>hydro</em> (water) and <em>ponos</em> (labor). Rather than letting plants search through soil for nutrients, hydroponics delivers exactly what they need directly to the roots.</p>
+        <p>Plants don't actually need soil — they need the <strong>water, oxygen, minerals, and structural support</strong> that soil happens to provide. Hydroponics supplies all of these more directly and efficiently, which is why hydroponic plants often grow significantly faster than their soil counterparts.</p>
+        <p>The roots are supported by an <strong>inert growing medium</strong> — rockwool, perlite, clay pebbles, or foam sponges — that holds moisture and oxygen without contributing any nutrients itself. All nutrition comes from a precisely measured liquid solution.</p>
+      </div>
+      <div class="prose">
+        <p>The first large-scale hydroponic systems were developed in the 1930s, but the principles date to the <strong>Hanging Gardens of Babylon</strong> and ancient Aztec floating garden systems called <em>chinampas</em>. NASA has long studied hydroponics for growing food in space, where soil is impractical.</p>
+        <p>Today, much of the <strong>lettuce, tomatoes, cucumbers, and herbs</strong> sold in grocery stores are grown hydroponically in commercial greenhouses. Desktop systems like the iDoo and Suncore bring this same technology to a countertop scale, making it accessible to home growers year-round regardless of climate or outdoor space.</p>
+        <p>The key variables in any hydroponic system are the same: <strong>nutrient concentration, pH, light, temperature, and oxygen at the root zone</strong>. Get these right and almost anything will grow.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY HYDROPONICS ── -->
+  <div class="section" id="why">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why grow hydroponically?</h2>
+    <p class="section-intro">Hydroponics offers real, measurable advantages over soil — especially for indoor and year-round growing.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-icon">⚡</div>
+        <h4>Faster growth</h4>
+        <p>Plants in hydroponic systems typically grow 30–50% faster than in soil because nutrients are delivered directly to roots with no searching required. Lettuce that takes 60+ days in soil can be ready in 28–35 days hydroponically.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">💧</div>
+        <h4>Water efficiency</h4>
+        <p>Closed-loop systems recirculate water continuously. Hydroponic growing uses up to 90% less water than traditional agriculture — the nutrient solution is replenished and reused rather than lost to runoff or evaporation.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🏠</div>
+        <h4>Grow anywhere</h4>
+        <p>No garden, no problem. Desktop systems grow on a countertop, balcony, or shelf. There are no soil pests, no weeding, and no seasonal limitations — you can harvest lettuce in February or tomatoes in December.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🎛️</div>
+        <h4>Precise control</h4>
+        <p>You control exactly what goes into the nutrient solution, the pH, the light cycle, and the growing environment. This makes it easy to dial in optimal conditions for each specific plant and stage of growth.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🌱</div>
+        <h4>Higher yields</h4>
+        <p>Controlled nutrient delivery and optimal lighting mean plants can be grown more densely than in soil. Commercial hydroponic farms regularly achieve yields 3–10× higher per square foot than field agriculture.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🪲</div>
+        <h4>Fewer pests & disease</h4>
+        <p>Soil is the primary vector for many plant pests and diseases. Soilless growing eliminates fungus gnats, nematodes, and soil-borne pathogens. Common problems like root rot can still occur but are far easier to manage.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SYSTEM TYPES ── -->
+  <div class="section" id="systems">
+    <div class="section-label">System types</div>
+    <h2 class="section-title">Types of hydroponic systems</h2>
+    <p class="section-intro">Six main methods, each with different trade-offs for complexity, plant size, and water management. Desktop systems like the iDoo and Suncore are primarily DWC-based.</p>
+
+    <div style="overflow-x:auto;border-radius:10px;box-shadow:var(--shadow);">
+      <table class="system-table">
+        <thead>
+          <tr>
+            <th>System</th>
+            <th>How it works</th>
+            <th>Best for</th>
+            <th>Complexity</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deep Water Culture (DWC)</td>
+            <td>Roots suspended in aerated nutrient solution continuously</td>
+            <td>Lettuce, herbs, small fruiting plants</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></span></td>
+            <td>Used in most desktop systems including iDoo & Suncore</td>
+          </tr>
+          <tr>
+            <td>Nutrient Film Technique (NFT)</td>
+            <td>Thin film of nutrient solution flows continuously over roots in a channel</td>
+            <td>Leafy greens, strawberries</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></span></td>
+            <td>Very water-efficient; pump failure is critical</td>
+          </tr>
+          <tr>
+            <td>Kratky Method</td>
+            <td>Passive DWC — no pump, air gap between roots and solution</td>
+            <td>Lettuce, herbs</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></span></td>
+            <td>Simplest possible system; no electricity needed</td>
+          </tr>
+          <tr>
+            <td>Ebb & Flow (Flood & Drain)</td>
+            <td>Grow bed periodically floods with solution then drains back to reservoir</td>
+            <td>Most vegetables, herbs, flowers</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></span></td>
+            <td>Versatile; works with many growing media</td>
+          </tr>
+          <tr>
+            <td>Drip System</td>
+            <td>Nutrient solution dripped slowly onto base of each plant</td>
+            <td>Tomatoes, peppers, cucumbers</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></span></td>
+            <td>Most common in commercial greenhouses</td>
+          </tr>
+          <tr>
+            <td>Aeroponics</td>
+            <td>Roots suspended in air and misted with nutrient solution</td>
+            <td>High-value crops, R&D</td>
+            <td><span class="difficulty"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span></span></td>
+            <td>Highest growth rates; used by NASA; complex and costly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── ESSENTIALS ── -->
+  <div class="section" id="essentials">
+    <div class="section-label">What you need</div>
+    <h2 class="section-title">The essentials</h2>
+    <p class="section-intro">Every hydroponic setup — from a Mason jar to a commercial greenhouse — relies on the same core components.</p>
+
+    <div class="essentials-grid">
+      <div class="essential-card">
+        <h4>💡 Lighting</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>LED grow lights are the standard — efficient, full-spectrum, and low-heat</span></li>
+          <li><span class="li-dot"></span><span>Leafy greens need 14–16 hours of light per day</span></li>
+          <li><span class="li-dot"></span><span>Fruiting plants need 16–18 hours, especially during vegetative stage</span></li>
+          <li><span class="li-dot"></span><span>Light distance matters — too far causes stretching, too close causes bleaching</span></li>
+          <li><span class="li-dot"></span><span>A timer is essential — consistency is more important than intensity</span></li>
+        </ul>
+      </div>
+      <div class="essential-card">
+        <h4>🌊 Water & reservoir</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>Tap water works for most setups — let it sit 30 min if heavily chlorinated</span></li>
+          <li><span class="li-dot"></span><span>Reservoir should be opaque to prevent algae growth</span></li>
+          <li><span class="li-dot"></span><span>Change the full reservoir every 7–10 days to prevent salt buildup</span></li>
+          <li><span class="li-dot"></span><span>Top off between changes with dilute nutrient solution, not plain water</span></li>
+          <li><span class="li-dot"></span><span>Root zone temperature should stay between 65–72°F</span></li>
+        </ul>
+      </div>
+      <div class="essential-card">
+        <h4>🧪 Nutrients</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>Use a complete hydroponic nutrient solution — soil fertilizers are not adequate</span></li>
+          <li><span class="li-dot"></span><span>Two-part (A+B) solutions prevent nutrients from precipitating out of solution</span></li>
+          <li><span class="li-dot"></span><span>CalMag (calcium/magnesium) supplement is important for most crops</span></li>
+          <li><span class="li-dot"></span><span>FloraBloom (high phosphorus/potassium) boosts flowering and fruiting crops</span></li>
+          <li><span class="li-dot"></span><span>Always add CalMag before A and B when mixing</span></li>
+        </ul>
+      </div>
+      <div class="essential-card">
+        <h4>⚗️ pH & EC meters</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>pH meter is the single most important tool — wrong pH causes nutrient lockout</span></li>
+          <li><span class="li-dot"></span><span>Target pH 5.5–6.5 for most crops (different crops have different preferences)</span></li>
+          <li><span class="li-dot"></span><span>EC meter measures nutrient concentration — prevents over or under-feeding</span></li>
+          <li><span class="li-dot"></span><span>pH tends to drift upward in active systems — check every 1–2 days</span></li>
+          <li><span class="li-dot"></span><span>Store pH probe in storage solution, not plain water — extends probe life</span></li>
+        </ul>
+      </div>
+      <div class="essential-card">
+        <h4>🪨 Growing media</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>Rockwool — most common; excellent water retention and aeration</span></li>
+          <li><span class="li-dot"></span><span>Foam/sponge pods — standard in desktop systems; easy to work with</span></li>
+          <li><span class="li-dot"></span><span>Clay pebbles (LECA) — reusable; great drainage; used in DWC and ebb & flow</span></li>
+          <li><span class="li-dot"></span><span>Perlite — lightweight volcanic glass; good for mixing with other media</span></li>
+          <li><span class="li-dot"></span><span>All media should be pH-neutral and inert — they support roots, not feed them</span></li>
+        </ul>
+      </div>
+      <div class="essential-card">
+        <h4>🌡️ Environment</h4>
+        <ul>
+          <li><span class="li-dot"></span><span>Air temperature: 65–80°F is ideal for most crops</span></li>
+          <li><span class="li-dot"></span><span>Humidity: 50–70% — higher risks mold, lower risks tip burn</span></li>
+          <li><span class="li-dot"></span><span>Air circulation: a small fan improves stem strength and reduces disease</span></li>
+          <li><span class="li-dot"></span><span>CO₂: ambient levels are fine; supplemental CO₂ helps in sealed grow rooms</span></li>
+          <li><span class="li-dot"></span><span>Consistent conditions matter more than perfect conditions</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NUTRIENTS ── -->
+  <div class="section" id="nutrients-section">
+    <div class="section-label">Nutrition & chemistry</div>
+    <h2 class="section-title">Nutrients & pH</h2>
+    <p class="section-intro">Plants need 17 essential elements to grow. Hydroponics delivers all of them through a precisely formulated liquid solution — and pH determines whether plants can actually absorb them.</p>
+
+    <div class="nutrients-panel">
+      <h3>Essential macronutrients</h3>
+      <p class="sub">The six primary nutrients — three mobile (plants can redistribute them) and three secondary</p>
+      <div class="nutrients-grid">
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">N — Nitrogen</div>
+          <div class="nutrient-name">Primary macro</div>
+          <div class="nutrient-role">Drives leaf and stem growth. High demand during vegetative stage. Leafy greens need nitrogen-forward nutrition throughout.</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">P — Phosphorus</div>
+          <div class="nutrient-name">Primary macro</div>
+          <div class="nutrient-role">Drives root development, flower formation, and fruit set. FloraBloom is phosphorus-rich for this reason.</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">K — Potassium</div>
+          <div class="nutrient-name">Primary macro</div>
+          <div class="nutrient-role">Regulates water movement, enzyme activation, and fruit quality. Essential at all stages, higher at fruiting.</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">Ca — Calcium</div>
+          <div class="nutrient-name">Secondary macro</div>
+          <div class="nutrient-role">Cell wall strength. Deficiency causes tip burn in lettuce and blossom end rot in tomatoes. Supplied by CALiMAGic.</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">Mg — Magnesium</div>
+          <div class="nutrient-name">Secondary macro</div>
+          <div class="nutrient-role">Central atom in chlorophyll. Deficiency shows as yellowing between leaf veins. Also supplied by CALiMAGic.</div>
+        </div>
+        <div class="nutrient-item">
+          <div class="nutrient-symbol">S — Sulfur</div>
+          <div class="nutrient-name">Secondary macro</div>
+          <div class="nutrient-role">Protein synthesis and enzyme function. Usually present in sufficient quantities in complete nutrient solutions.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-top:36px;margin-bottom:8px;">pH targets by crop</h3>
+    <p style="font-size:13.5px;color:var(--ink-mid);margin-bottom:4px;font-weight:300;">Even with perfect nutrient concentration, wrong pH causes <strong style="color:var(--ink)">nutrient lockout</strong> — the plant physically cannot absorb what's in the water.</p>
+
+    <div class="ph-grid">
+      <div class="ph-card">
+        <div class="plant">🥬 Lettuce</div>
+        <div class="range">5.5–6.5</div>
+        <div class="ph-label">Ideal ~6.0</div>
+      </div>
+      <div class="ph-card">
+        <div class="plant">🍅 Tomatoes</div>
+        <div class="range">5.8–6.3</div>
+        <div class="ph-label">Ideal ~6.1</div>
+      </div>
+      <div class="ph-card">
+        <div class="plant">🌿 Herbs</div>
+        <div class="range">5.5–6.5</div>
+        <div class="ph-label">Ideal ~6.0</div>
+      </div>
+      <div class="ph-card">
+        <div class="plant">🥬 Bok Choy</div>
+        <div class="range">6.0–7.0</div>
+        <div class="ph-label">Ideal ~6.5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GLOSSARY ── -->
+  <div class="section" id="glossary">
+    <div class="section-label">Reference</div>
+    <h2 class="section-title">Glossary</h2>
+    <p class="section-intro">Key terms you'll encounter in hydroponic growing.</p>
+
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">EC (Electrical Conductivity)</div>
+        <div class="glossary-def">Measures the concentration of dissolved nutrients in your solution. Measured in mS/cm. Higher EC = stronger solution. Low EC causes deficiency; high EC causes nutrient burn.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">TDS (Total Dissolved Solids)</div>
+        <div class="glossary-def">Alternative way to measure nutrient concentration, in parts per million (ppm). Often displayed alongside EC on combo meters. Rough conversion: EC × 500 = ppm.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">pH (Potential Hydrogen)</div>
+        <div class="glossary-def">Scale from 0–14 measuring acidity/alkalinity. 7.0 is neutral. Most hydroponic crops prefer slightly acidic conditions (5.5–6.5). Controls nutrient availability.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Nutrient lockout</div>
+        <div class="glossary-def">When pH is out of range, nutrients become chemically unavailable even if present. The plant shows deficiency symptoms despite a full reservoir. Fix the pH first before adding more nutrients.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">DWC (Deep Water Culture)</div>
+        <div class="glossary-def">Plants roots sit in an oxygenated nutrient solution continuously. The most common method in desktop systems. Requires an air pump or active water circulation for oxygen at the roots.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Root zone</div>
+        <div class="glossary-def">The area immediately surrounding the roots. Temperature, oxygen level, and nutrient availability in the root zone are the primary factors determining plant health and growth rate.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Cotyledons</div>
+        <div class="glossary-def">The first two leaves a seedling produces — round, simple, and generic-looking. These are seed leaves stored in the seed itself, not true leaves. They yellow and fall off naturally as the plant matures.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">True leaves</div>
+        <div class="glossary-def">The second pair of leaves that emerge, which look like miniature versions of the adult plant. Their appearance signals the seedling is ready to move into the hydro system and begin thinning.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Bolting</div>
+        <div class="glossary-def">When a leafy plant shifts from vegetative to reproductive mode and sends up a flowering stalk. Lettuce becomes bitter when bolting begins. Triggered by heat, long days, or root stress.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Sucker</div>
+        <div class="glossary-def">A shoot that grows from the junction between a tomato plant's main stem and a leaf branch. If left, it becomes a full stem. In desktop systems, remove suckers to keep 1–2 main stems.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">CalMag / CALiMAGic</div>
+        <div class="glossary-def">A calcium and magnesium supplement. Prevents tip burn in lettuce and blossom end rot in tomatoes. Always add to water before Part A and Part B nutrients when mixing.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">FloraBloom</div>
+        <div class="glossary-def">A General Hydroponics nutrient formula high in phosphorus and potassium. Introduced at flowering stage in fruiting crops to drive flower and fruit development. Not used for leafy greens.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <strong>Home Hydroponics Reference</strong><br>
+  iDoo 12-pod · Suncore 20-pod · General Hydroponics nutrients<br><br>
+  All three files belong in the same folder: <code style="font-family:'DM Mono',monospace;font-size:12px;opacity:0.7">index.html</code> &nbsp;·&nbsp; <code style="font-family:'DM Mono',monospace;font-size:12px;opacity:0.7">hydroponic_guide.html</code> &nbsp;·&nbsp; <code style="font-family:'DM Mono',monospace;font-size:12px;opacity:0.7">chinese_veg_grow_guide.html</code>
+</footer>
+
+</body>
+</html>
