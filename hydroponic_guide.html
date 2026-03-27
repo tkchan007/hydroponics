@@ -777,9 +777,9 @@
   <a class="nav-link" onclick="scrollTo('nutrients')"><span class="nav-dot"></span>Nutrient schedule</a>
   <a class="nav-link" onclick="scrollTo('ph')"><span class="nav-dot"></span>pH management</a>
 
-  <div class="nav-section-label" style="margin-top:8px">iDoo — Lettuce</div>
+  <div class="nav-section-label" style="margin-top:8px">iDoo — Lettuce & Arugula</div>
   <a class="nav-link" onclick="scrollTo('lettuce')"><span class="nav-dot"></span>Full lifecycle</a>
-  <a class="nav-link" onclick="scrollTo('pruning-lettuce')"><span class="nav-dot"></span>Pruning guide</a>
+  <a class="nav-link" onclick="scrollTo('pruning-lettuce')"><span class="nav-dot"></span>Pruning & succession</a>
 
   <div class="nav-section-label" style="margin-top:8px">Suncore — Tomatoes</div>
   <a class="nav-link" onclick="scrollTo('tomatoes')"><span class="nav-dot amber"></span>Full lifecycle</a>
@@ -803,15 +803,16 @@
     <div class="system-badges">
       <span class="badge badge-lettuce">🥬 iDoo 12-pod</span>
       <span class="badge badge-tomato">🍅 Suncore 20-pod</span>
+      <span class="badge badge-neutral">🌿 Arugula</span>
       <span class="badge badge-neutral">GH Nutrients</span>
     </div>
     <h1 class="page-title">Hydroponic<br>Reference Guide</h1>
-    <p class="page-subtitle">Complete lifecycle care for desktop hydroponic lettuce and dwarf tomatoes — from germination to harvest.</p>
+    <p class="page-subtitle">Complete lifecycle care for desktop hydroponic lettuce, arugula, and dwarf tomatoes — from germination to harvest.</p>
 
     <div class="system-grid">
       <div class="system-card lettuce">
         <h3>iDoo 12-pod</h3>
-        <div class="stat-row"><span class="stat-label">Plants</span><span class="stat-val">Black Seed + Red Romaine</span></div>
+        <div class="stat-row"><span class="stat-label">Plants</span><span class="stat-val">Black Seed, Red Romaine, Arugula</span></div>
         <div class="stat-row"><span class="stat-label">Max height</span><span class="stat-val">~11"</span></div>
         <div class="stat-row"><span class="stat-label">Light cycle</span><span class="stat-val">16h / 8h</span></div>
         <div class="stat-row"><span class="stat-label">pH target</span><span class="stat-val">5.5 – 6.5</span></div>
@@ -849,6 +850,7 @@
         <div class="param-cell"><div class="param-name">Seeds per pod</div><div class="param-val">2 – 3</div></div>
         <div class="param-cell"><div class="param-name">Nutrients</div><div class="param-val">None yet</div></div>
         <div class="param-cell"><div class="param-name">Lettuce sprout</div><div class="param-val">2 – 5 days</div></div>
+        <div class="param-cell"><div class="param-name">Arugula sprout</div><div class="param-val">3 – 7 days</div></div>
         <div class="param-cell"><div class="param-name">Tomato sprout</div><div class="param-val">5 – 7 days</div></div>
       </div>
 
@@ -931,8 +933,8 @@
       <div class="section-header-left">
         <div class="section-icon icon-teal">🥬</div>
         <div>
-          <div class="section-title">Lettuce Lifecycle — iDoo 12-pod</div>
-          <div class="section-meta">Black Seed Lettuce · Red Romaine · 28–45 days per cycle</div>
+          <div class="section-title">Lettuce & Arugula Lifecycle — iDoo 12-pod</div>
+          <div class="section-meta">Black Seed Lettuce · Red Romaine · Arugula · 28–45 days per cycle</div>
         </div>
       </div>
       <svg class="chevron open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1005,17 +1007,48 @@
         </div>
       </div>
 
-    </div>
-  </div>
+      <!-- Arugula phase card -->
+      <div class="phase">
+        <div class="phase-header phase-neutral">
+          <span class="phase-tag">Arugula</span>
+          <span>Key differences from lettuce — same system, same care, faster clock</span>
+        </div>
+        <div class="phase-body">
+          <div class="param-grid">
+            <div class="param-cell"><div class="param-name">pH range</div><div class="param-val">6.0 – 7.0</div></div>
+            <div class="param-cell"><div class="param-name">EC target</div><div class="param-val">0.8 – 1.8</div></div>
+            <div class="param-cell"><div class="param-name">Light cycle</div><div class="param-val">16h on / 8h off</div></div>
+            <div class="param-cell"><div class="param-name">Harvest size</div><div class="param-val">3 – 5" leaves</div></div>
+            <div class="param-cell"><div class="param-name">Days to harvest</div><div class="param-val">21 – 40 days</div></div>
+            <div class="param-cell"><div class="param-name">FloraBloom</div><div class="param-val">Not used</div></div>
+          </div>
+          <div class="table-wrap" style="margin-top:4px">
+            <table>
+              <thead class="teal-head"><tr><th>Trait</th><th>What to expect</th></tr></thead>
+              <tbody>
+                <tr><td>Growth speed</td><td>Comparable to Black Seed Lettuce — fast in the iDoo's warm, lit environment</td></tr>
+                <tr><td>Flavor timing</td><td>Mild and nutty when young · peppery at full size · bitter after bolting</td></tr>
+                <tr><td>Red/purple tint on leaves</td><td>Normal under LED grow lights — anthocyanin response, not stress. Higher light deepens peppery flavor.</td></tr>
+                <tr><td>Bolt trigger</td><td>Heat and long days — iDoo's 16h cycle is manageable; watch reservoir temp</td></tr>
+                <tr><td>Harvest approach</td><td>Cut-and-come-again, same as lettuce — but harvest earlier and more frequently to stay ahead of bolting</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout callout-warn" style="margin-top:12px">
+            <span class="callout-icon">⚡</span>
+            <div><strong>Arugula bolts faster than lettuce.</strong> Don't wait for maximum leaf size — at the first sign of a central stalk elongating, harvest the whole plant immediately. Flavor turns intensely bitter very quickly once bolting starts.</div>
+          </div>
+        </div>
+      </div>
 
-  <!-- LETTUCE PRUNING -->
+
   <div class="section" id="pruning-lettuce">
     <div class="section-header" onclick="toggle(this)">
       <div class="section-header-left">
         <div class="section-icon icon-teal">🌿</div>
         <div>
-          <div class="section-title">Pruning — Lettuce (iDoo)</div>
-          <div class="section-meta">Minimal intervention · No topping</div>
+          <div class="section-title">Pruning — Lettuce & Arugula (iDoo)</div>
+          <div class="section-meta">Minimal intervention · No topping · Arugula bolts faster</div>
         </div>
       </div>
       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1029,8 +1062,9 @@
           <tbody>
             <tr><td>Remove cotyledons (seed leaves)</td><td>Day 10–14, when yellowing naturally</td><td>Pinch off cleanly at the base</td></tr>
             <tr><td>Remove leaves touching water</td><td>Any time you notice them</td><td>Pinch off — prevents bacterial rot in reservoir</td></tr>
-            <tr><td>Outer leaf harvest (cut-and-come-again)</td><td>Day 28+ when leaves are full sized (4–5")</td><td>Cut outer leaves, leave center rosette intact</td></tr>
-            <tr><td>Full harvest before bolting</td><td>When center stalk elongates rapidly</td><td>Cut whole plant at base immediately — taste degrades fast</td></tr>
+            <tr><td>Outer leaf harvest — lettuce (cut-and-come-again)</td><td>Day 28+ when leaves are full sized (4–5")</td><td>Cut outer leaves, leave center rosette intact</td></tr>
+            <tr><td>Outer leaf harvest — arugula (cut-and-come-again)</td><td>Day 21+ at 3–5"; harvest earlier and more often than lettuce</td><td>Cut outer leaves, leave center rosette intact</td></tr>
+            <tr><td>Full harvest before bolting</td><td>When center stalk elongates rapidly — arugula bolts faster than lettuce</td><td>Cut whole plant at base immediately — taste degrades fast</td></tr>
           </tbody>
         </table>
       </div>
@@ -1041,6 +1075,10 @@
       <div class="callout callout-green">
         <span class="callout-icon">🥬</span>
         <div><strong>Outer leaves at 3–4"?</strong> Leave them — they're almost at harvest size but still feeding the plant. Wait until they reach 4–5" or start drooping toward the water before cutting. Take the 2–3 outermost only, and the plant will keep pushing new growth from the center.</div>
+      </div>
+      <div class="callout callout-teal">
+        <span class="callout-icon">🔄</span>
+        <div><strong>Succession planting tip:</strong> When rotating young seedlings into front/center pod positions and moving mature plants to the back, do it right after a reservoir change when plants are well-hydrated. Ease pods straight up slowly — roots can be long and tangled toward the water. Once mature plants are at the back, do a more aggressive outer-leaf harvest to reduce shading on the new seedlings.</div>
       </div>
     </div>
   </div>
@@ -1377,7 +1415,7 @@
         <div class="section-icon icon-amber">🔧</div>
         <div>
           <div class="section-title">Common Problems & Fixes</div>
-          <div class="section-meta">Lettuce · Tomatoes · Both systems</div>
+          <div class="section-meta">Lettuce · Arugula · Tomatoes · Both systems</div>
         </div>
       </div>
       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1385,7 +1423,7 @@
     <div class="section-body">
 
       <div class="problem-section">
-        <h4>🥬 Lettuce problems</h4>
+        <h4>🥬 Lettuce & Arugula problems</h4>
         <div class="table-wrap">
           <table>
             <thead class="teal-head"><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
@@ -1394,6 +1432,7 @@
               <tr><td>Stretchy stems reaching for light</td><td>Insufficient light or too far away</td><td>Ensure 16h cycle · lower light closer to canopy</td></tr>
               <tr><td>Pale yellow overall</td><td>Low nutrients or pH lockout</td><td>Check and correct pH first, then increase A+B strength</td></tr>
               <tr><td>Center stalk elongating rapidly</td><td>Bolting — about to turn bitter</td><td>Harvest the whole plant immediately</td></tr>
+              <tr><td>Arugula taste very bitter/sharp</td><td>Over-mature or bolting</td><td>Harvest immediately — arugula bolts faster than lettuce; harvest earlier next cycle</td></tr>
               <tr><td>Green slime on reservoir walls</td><td>Algae — light reaching water</td><td>Block light from reservoir · treat with H₂O₂ at 3 mL/gallon</td></tr>
             </tbody>
           </table>
@@ -1451,15 +1490,17 @@
     <div class="section-body open">
       <div class="quick-ref">
         <div class="qr-card lettuce-qr">
-          <h3>🥬 Lettuce — iDoo</h3>
-          <div class="qr-row"><span class="qr-key">pH range</span><span class="qr-val">5.5 – 6.5</span></div>
+          <h3>🥬 Lettuce & Arugula — iDoo</h3>
+          <div class="qr-row"><span class="qr-key">pH — lettuce</span><span class="qr-val">5.5 – 6.5</span></div>
+          <div class="qr-row"><span class="qr-key">pH — arugula</span><span class="qr-val">6.0 – 7.0</span></div>
           <div class="qr-row"><span class="qr-key">Light</span><span class="qr-val">16h on / 8h off</span></div>
           <div class="qr-row"><span class="qr-key">EC seedling</span><span class="qr-val">0.8 – 1.2</span></div>
           <div class="qr-row"><span class="qr-key">EC vegetative</span><span class="qr-val">1.2 – 1.8</span></div>
           <div class="qr-row"><span class="qr-key">EC harvest</span><span class="qr-val">1.6 – 2.0</span></div>
           <div class="qr-row"><span class="qr-key">FloraBloom</span><span class="qr-val">NOT USED</span></div>
           <div class="qr-row"><span class="qr-key">CALiMAGic</span><span class="qr-val">From veg on</span></div>
-          <div class="qr-row"><span class="qr-key">Harvest from</span><span class="qr-val">Day 28–45+</span></div>
+          <div class="qr-row"><span class="qr-key">Lettuce harvest</span><span class="qr-val">Day 28–45+</span></div>
+          <div class="qr-row"><span class="qr-key">Arugula harvest</span><span class="qr-val">Day 21–40 (harvest early!)</span></div>
           <div class="qr-row"><span class="qr-key">Cycle length</span><span class="qr-val">6 – 8 weeks</span></div>
         </div>
         <div class="qr-card tomato-qr">
